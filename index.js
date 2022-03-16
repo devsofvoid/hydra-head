@@ -39,9 +39,9 @@ app.get('/', (req, res) => {
         let type = response.message || response.type;
 
         if(type=='success') {
-            res.send(attack(method, repeats, target, port, token, duration));
+            return res.send(attack(method, repeats, target, port, token, duration));
         } else {
-            res.send({"type": "error", "message": "You must provide valid token."})
+            return res.send({"type": "error", "message": "You must provide valid token."})
         }
     });
 
