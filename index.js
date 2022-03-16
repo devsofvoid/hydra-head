@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
     const repeats = req.query.repeats;
     const duration = req.query.duration;
 
-    if(!token || !method || !target || !port || !repeats || !duration) res.send({
+    if(!token || !method || !target || !port || !repeats || !duration) return res.send({
         'type': 'error',
         'message': 'You must provide correct GET params.'
     });
